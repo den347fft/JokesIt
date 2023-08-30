@@ -21,6 +21,8 @@ def generate_joke():
             ofline_languages = ["en","de","es","gl","eu","it"]
             text["height"] = 2
             text["text"] = f"Ошыбка офлайн язык не найден\n{ofline_languages}"
+    except httpcore._exceptions.ConnectTimeout:
+        text["text"] = "Ошыбка перевода"
 root = Tk()
 root["bg"] = "white"
 root.title("JokesOfIt by _sineD_0")
